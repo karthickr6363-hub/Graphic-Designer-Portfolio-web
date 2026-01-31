@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | Client Success Stories</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            600: '#6366f1',
+                            700: '#4f46e5',
+                            900: '#312e81',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- HEADER / NAVIGATION (Shared) -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-header h-[80px] flex items-center">
+        <div class="container mx-auto px-6 flex justify-between items-center h-full">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/img/logo.png" alt="Brand Logo" class="h-10 w-10 object-contain">
+                <span
+                    class="font-display text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">CREATIVE</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+                <a href="home2.html" class="hover:text-indigo-600 transition-colors">Home 2</a>
+                <a href="portfolio.html" class="hover:text-indigo-600 transition-colors">Portfolio</a>
+                <a href="services.html" class="hover:text-indigo-600 transition-colors">Services</a>
+                <a href="about.html" class="hover:text-indigo-600 transition-colors">About</a>
+                <a href="testimonials.html"
+                    class="hover:text-indigo-600 transition-colors active-nav-link">Testimonials</a>
+                <a href="blog.html" class="hover:text-indigo-600 transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition-colors">Contact</a>
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i id="sun-icon" class="ph ph-sun text-xl hidden"></i>
+                    <i id="moon-icon" class="ph ph-moon text-xl"></i>
+                </button>
+                <a href="contact.html"
+                    class="cta-button bg-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold">Hire Me</a>
+            </nav>
+
+            <div class="lg:hidden flex items-center gap-4">
+                <button id="mobile-menu-btn" class="text-2xl p-1"><i class="ph ph-list"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU (Shared) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm -translate-x-full transition-transform duration-300 lg:hidden text-slate-100">
+        <div class="w-4/5 h-full bg-slate-900 p-8 flex flex-col">
+            <div class="flex justify-between items-center mb-12">
+                <div class="flex items-center gap-2">
+                    <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8">
+                    <span class="font-display font-bold text-xl">CREATIVE</span>
+                </div>
+                <button id="mobile-menu-close" class="text-2xl"><i class="ph ph-x"></i></button>
+            </div>
+            <nav class="flex flex-col gap-6 text-lg">
+                <a href="index.html" class="hover:text-indigo-400">Home</a>
+                <a href="home2.html" class="hover:text-indigo-400">Home 2</a>
+                <a href="portfolio.html" class="hover:text-indigo-400">Portfolio</a>
+                <a href="services.html" class="hover:text-indigo-400">Services</a>
+                <a href="about.html" class="hover:text-indigo-400">About</a>
+                <a href="testimonials.html" class="text-indigo-400">Testimonials</a>
+                <a href="blog.html" class="hover:text-indigo-400">Blog</a>
+                <a href="contact.html" class="hover:text-indigo-400">Contact</a>
+                <hr class="border-slate-800 my-2">
+                <a href="contact.html" class="bg-indigo-600 text-white text-center py-3 rounded-xl font-semibold">Hire
+                    Me</a>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <!-- TESTIMONIALS HERO -->
+        <section class="py-24 bg-slate-50 dark:bg-slate-950">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="font-display text-5xl lg:text-7xl font-extrabold mb-6">Client <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Kind
+                        Words</span></h1>
+                <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">We don't just
+                    build brands; we build relationships. See what our partners have to say about the journey.</p>
+            </div>
+        </section>
+
+        <!-- VIDEO TESTIMONIALS -->
+        <section class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div
+                        class="rounded-3xl overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800 relative group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&q=80&w=1200"
+                            alt="Video Placeholder" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-slate-900/40 flex items-center justify-center opacity-100 group-hover:bg-slate-900/60 transition-all">
+                            <div
+                                class="w-20 h-20 rounded-full bg-white text-indigo-600 flex items-center justify-center text-3xl shadow-xl transform group-hover:scale-110 transition-transform">
+                                <i class="ph ph-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h4 class="font-bold text-xl">James Wilson</h4>
+                            <span class="text-sm opacity-80">Founder, CloudSync</span>
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-3xl overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800 relative group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200"
+                            alt="Video Placeholder" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-slate-900/40 flex items-center justify-center opacity-100 group-hover:bg-slate-900/60 transition-all">
+                            <div
+                                class="w-20 h-20 rounded-full bg-white text-indigo-600 flex items-center justify-center text-3xl shadow-xl transform group-hover:scale-110 transition-transform">
+                                <i class="ph ph-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h4 class="font-bold text-xl">Elena Rodriguez</h4>
+                            <span class="text-sm opacity-80">Director, Maven Agency</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL GRID (Rule 37) -->
+        <section class="py-24 bg-slate-50 dark:bg-slate-950">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <!-- Review 1 -->
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex gap-1 text-orange-400 mb-6">
+                            <i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i
+                                class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i
+                                class="ph ph-star-fill"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">"The project was executed
+                            beyond our expectations. The branding feels authentically us and our sales have increased by
+                            30% since the relaunch."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-slate-200">
+                                <img src="https://i.pravatar.cc/150?u=4" alt="Client">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Robert Fox</h4>
+                                <span class="text-sm text-slate-500">Marketing Lead</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex gap-1 text-orange-400 mb-6">
+                            <i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i
+                                class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i
+                                class="ph ph-star-fill"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">"Prompt, creative, and highly
+                            professional. Alex is our go-to for all things design. Cannot recommend enough!"</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-slate-200">
+                                <img src="https://i.pravatar.cc/150?u=5" alt="Client">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Bessie Cooper</h4>
+                                <span class="text-sm text-slate-500">Startup Founder</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex gap-1 text-orange-400 mb-6">
+                            <i class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i
+                                class="ph ph-star-fill"></i><i class="ph ph-star-fill"></i><i
+                                class="ph ph-star-fill"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">"A true partner in our
+                            success. The UI/UX work for our new platform is world-class."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-slate-200">
+                                <img src="https://i.pravatar.cc/150?u=6" alt="Client">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Arlene McCoy</h4>
+                                <span class="text-sm text-slate-500">Creative Director</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Rule 37: Centered single CTA -->
+                <div class="text-center">
+                    <button
+                        class="cta-button bg-indigo-600 text-white px-10 py-4 rounded-full font-bold shadow-lg shadow-indigo-200 dark:shadow-none hover:bg-slate-900 transition-all">
+                        Read More Reviews
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE STUDY PREVIEW -->
+        <section class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2">
+                        <span class="text-indigo-600 font-black uppercase tracking-widest text-sm mb-4 block">Case
+                            Study</span>
+                        <h2 class="text-4xl lg:text-5xl font-display font-bold mb-8">Rebranding a Tech Giant</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                            How we helped Lumina Tech reposition themselves in a crowded market through a modern,
+                            scalable visual identity system.
+                        </p>
+                        <a href="portfolio.html"
+                            class="flex items-center gap-3 font-bold text-xl hover:text-indigo-600 transition-colors">
+                            Read Full Story <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="rounded-3xl overflow-hidden shadow-2xl skew-y-2">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1200"
+                                class="w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white dark:bg-slate-950 pt-20 pb-10 border-t border-slate-100 dark:border-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8">
+                        <span class="font-display font-bold text-xl uppercase">CREATIVE</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
+                        Transforming ideas into visually stunning realities. Let's build something amazing together.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-instagram-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-twitter-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-linkedin-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-behance-logo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h4 class="font-bold mb-6">Quick Links</h4>
+                    <ul class="flex flex-col gap-4 text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a></li>
+                        <li><a href="portfolio.html" class="hover:text-indigo-600 transition-colors">Portfolio</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-600 transition-colors">Services</a></li>
+                        <li><a href="about.html" class="hover:text-indigo-600 transition-colors">About Me</a></li>
+                        <li><a href="testimonials.html" class="hover:text-indigo-600 transition-colors">Testimonials</a>
+                        </li>
+                        <li><a href="blog.html" class="hover:text-indigo-600 transition-colors">Design Resources</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-indigo-600 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold mb-6">What I Do</h4>
+                    <ul class="flex flex-col gap-4 text-slate-500 dark:text-slate-400">
+                        <li>Brand Identity</li>
+                        <li>UI/UX Design</li>
+                        <li>Social Media Design</li>
+                        <li>Print & Packaging</li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold mb-6">Get in Touch</h4>
+                    <p class="text-slate-500 dark:text-slate-400 mb-4">Ready to start a project?</p>
+                    <a href="mailto:hello@creative.com"
+                        class="text-lg font-bold text-indigo-600 hover:underline">hello@creative.com</a>
+                    <div class="mt-6 flex items-center gap-2 text-slate-500">
+                        <i class="ph ph-map-pin"></i>
+                        <span>Remote | worldwide</span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:row justify-between items-center gap-4 text-sm text-slate-400">
+                <p>&copy; 2026 Creative Designer Portfolio. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+                    <a href="#" class="hover:text-indigo-600">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

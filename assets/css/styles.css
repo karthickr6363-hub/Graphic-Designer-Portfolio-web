@@ -1,0 +1,156 @@
+/* Custom Tokens & Utilities */
+:root {
+    --nav-height-desktop: 80px;
+    --nav-height-mobile: 64px;
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+}
+
+.active-nav-link {
+    color: #4f46e5;
+    font-weight: 600;
+    position: relative;
+}
+
+.dark .active-nav-link {
+    color: #818cf8;
+}
+
+.active-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+}
+
+/* Glassmorphism */
+.glass-header {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-header {
+    background: rgba(15, 23, 42, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Global Polish */
+body {
+    padding-top: var(--nav-height-desktop);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding-top: var(--nav-height-mobile);
+    }
+}
+
+/* Premium Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes gradient-x {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 15s ease infinite;
+}
+
+/* Reveal on Scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Typography Consistency */
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+p,
+span,
+a,
+button {
+    font-family: 'Inter', sans-serif;
+}
+
+/* CTA Transitions */
+.cta-button {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: center;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.cta-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Custom Shadow Utility */
+.shadow-3xl {
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.25);
+}
+
+/* Grainy Texture */
+.grainy {
+    position: relative;
+}
+
+.grainy::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    z-index: 10;
+}

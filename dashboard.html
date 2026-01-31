@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Creative Designer Portal</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            600: '#6366f1',
+                            700: '#4f46e5',
+                            900: '#312e81',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Dashboard specific styles */
+        body {
+            padding-top: 0;
+        }
+
+        /* Remove global header padding */
+        .sidebar-link.active {
+            background-color: rgb(238 242 255);
+            /* bg-indigo-50 */
+            color: rgb(79 70 229);
+            /* text-indigo-600 */
+            border-right-width: 4px;
+            /* border-r-4 */
+            border-color: rgb(79 70 229);
+            /* border-indigo-600 */
+        }
+
+        .dark .sidebar-link.active {
+            background-color: rgba(49, 46, 129, 0.3);
+            /* dark:bg-indigo-900/30 */
+            color: rgb(129 140 248);
+            /* dark:text-indigo-400 */
+        }
+
+        /* Custom bar graph size (Rule 47) */
+        .small-bar {
+            height: 12px;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- DASHBOARD SIDEBAR (Desktop) -->
+        <aside
+            class="hidden lg:flex w-72 flex-col bg-white dark:bg-slate-900 border-r border-slate-100 dark:border-slate-800">
+            <div class="p-8">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8">
+                    <span class="font-display font-bold text-xl uppercase tracking-tighter">CREATIVE</span>
+                </a>
+            </div>
+
+            <nav class="flex-grow py-4">
+                <a href="#"
+                    class="flex items-center gap-4 px-8 py-4 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 border-r-4 border-indigo-600 font-bold">
+                    <i class="ph ph-squares-four text-2xl"></i> Overview
+                </a>
+                <a href="#"
+                    class="flex items-center gap-4 px-8 py-4 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all font-medium">
+                    <i class="ph ph-folder text-2xl"></i> My Projects
+                </a>
+                <a href="#"
+                    class="flex items-center gap-4 px-8 py-4 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all font-medium">
+                    <i class="ph ph-cloud-arrow-down text-2xl"></i> File Downloads
+                </a>
+                <a href="#"
+                    class="flex items-center gap-4 px-8 py-4 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all font-medium">
+                    <i class="ph ph-receipt text-2xl"></i> Invoices
+                </a>
+                <a href="#"
+                    class="flex items-center gap-4 px-8 py-4 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all font-medium relative">
+                    <i class="ph ph-chat-circle text-2xl"></i> Messages
+                    <span class="absolute right-8 w-2 h-2 bg-pink-500 rounded-full"></span>
+                </a>
+            </nav>
+
+            <div class="p-8 border-t border-slate-100 dark:border-slate-800">
+                <!-- Rule 49: Logout option -->
+                <a href="login.html"
+                    class="flex items-center gap-4 text-pink-600 font-bold hover:translate-x-1 transition-transform">
+                    <i class="ph ph-sign-out text-2xl"></i> Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <div class="flex-grow flex flex-col overflow-hidden">
+            <!-- Mobile Dashboard Header (Rule 49) -->
+            <header
+                class="lg:hidden flex justify-between items-center p-6 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8">
+                    <span class="font-display font-bold">CREATIVE</span>
+                </a>
+                <div class="flex gap-4">
+                    <!-- Rule 49: Filter icon -->
+                    <button class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-xl"><i
+                            class="ph ph-funnel"></i></button>
+                    <!-- Rule 49: Hamburger for dashboard nav -->
+                    <button id="dashboard-menu-btn" class="p-2 bg-indigo-600 text-white rounded-lg text-xl"><i
+                            class="ph ph-list"></i></button>
+                </div>
+            </header>
+
+            <main class="flex-grow overflow-y-auto p-6 lg:p-12 space-y-12">
+                <!-- Greeting -->
+                <div class="flex justify-between items-end">
+                    <div>
+                        <h1 class="text-3xl font-display font-bold mb-2">Welcome back, Sarah!</h1>
+                        <p class="text-slate-500">Here's what's happening with your projects today.</p>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm space-y-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-2xl">
+                            <i class="ph ph-clock"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-500 text-sm uppercase tracking-widest">Active Project</h4>
+                        <p class="text-2xl font-bold">Lumina Rebranding</p>
+                        <!-- Rule 47: Reduced size bar graph -->
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden small-bar">
+                            <div class="bg-indigo-600 h-full w-[65%]"></div>
+                        </div>
+                        <span class="text-xs font-bold text-indigo-600">65% Completed</span>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm space-y-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-2xl">
+                            <i class="ph ph-files"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-500 text-sm uppercase tracking-widest">Files Ready</h4>
+                        <p class="text-2xl font-bold">12 Deliverables</p>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden small-bar">
+                            <div class="bg-purple-600 h-full w-[100%]"></div>
+                        </div>
+                        <span class="text-xs font-bold text-purple-600">Ready for Download</span>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm space-y-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-pink-600 text-white flex items-center justify-center text-2xl">
+                            <i class="ph ph-chat-circle-dots"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-500 text-sm uppercase tracking-widest">New Messages</h4>
+                        <p class="text-2xl font-bold">3 Unread</p>
+                        <div class="flex -space-x-3">
+                            <img src="https://i.pravatar.cc/150?u=1"
+                                class="w-10 h-10 rounded-full border-4 border-white dark:border-slate-900">
+                            <img src="https://i.pravatar.cc/150?u=2"
+                                class="w-10 h-10 rounded-full border-4 border-white dark:border-slate-900">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Table -->
+                <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-sm overflow-hidden">
+                    <div class="p-8 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Recent Deliverables</h3>
+                        <button class="text-indigo-600 font-bold hover:underline">View All</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead
+                                class="bg-slate-50 dark:bg-slate-800 text-slate-500 text-xs uppercase tracking-widest">
+                                <tr>
+                                    <th class="px-8 py-4 font-black">File Name</th>
+                                    <th class="px-8 py-4 font-black">Category</th>
+                                    <th class="px-8 py-4 font-black">Date</th>
+                                    <th class="px-8 py-4 font-black">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                                <tr>
+                                    <td class="px-8 py-6 font-bold">Logo_Final_Pack.zip</td>
+                                    <td class="px-8 py-6 text-slate-500">Identity</td>
+                                    <td class="px-8 py-6 text-slate-500">Jan 28, 2026</td>
+                                    <td class="px-8 py-6"><button class="text-indigo-600"><i
+                                                class="ph ph-download-simple text-2xl"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-8 py-6 font-bold">Style_Guide_v2.pdf</td>
+                                    <td class="px-8 py-6 text-slate-500">Branding</td>
+                                    <td class="px-8 py-6 text-slate-500">Jan 25, 2026</td>
+                                    <td class="px-8 py-6"><button class="text-indigo-600"><i
+                                                class="ph ph-download-simple text-2xl"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Mobile Dashboard Menu (Left Slide-in) -->
+    <div id="dashboard-mobile-menu"
+        class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm -translate-x-full transition-transform duration-300 lg:hidden text-white">
+        <div class="w-4/5 h-full bg-slate-900 p-8 flex flex-col">
+            <div class="flex justify-between items-center mb-12">
+                <span class="font-display font-bold text-xl uppercase italic">Dashboard</span>
+                <button id="dashboard-menu-close" class="text-2xl"><i class="ph ph-x"></i></button>
+            </div>
+            <nav class="flex flex-col gap-6 text-lg">
+                <a href="#" class="text-indigo-400 font-bold flex items-center gap-3"><i class="ph ph-squares-four"></i>
+                    Overview</a>
+                <a href="#" class="flex items-center gap-3"><i class="ph ph-folder"></i> My Projects</a>
+                <a href="#" class="flex items-center gap-3"><i class="ph ph-chat-circle"></i> Messages</a>
+                <hr class="border-slate-800 my-2">
+                <a href="login.html" class="text-pink-600 font-bold flex items-center gap-3"><i
+                        class="ph ph-sign-out"></i> Log Out</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('dashboard-menu-btn');
+        const menu = document.getElementById('dashboard-mobile-menu');
+        const closeBtn = document.getElementById('dashboard-menu-close');
+
+        menuBtn?.addEventListener('click', () => {
+            menu.classList.remove('-translate-x-full');
+        });
+
+        closeBtn?.addEventListener('click', () => {
+            menu.classList.add('-translate-x-full');
+        });
+    </script>
+</body>
+
+</html>

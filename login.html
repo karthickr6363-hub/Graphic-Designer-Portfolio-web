@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Creative Designer Portal</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            600: '#6366f1',
+                            700: '#4f46e5',
+                            900: '#312e81',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Rule 19: No unnecessary scrollbar */
+        body {
+            overflow: hidden;
+        }
+
+        @media (max-height: 800px) {
+            body {
+                overflow-y: auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 h-full flex items-center justify-center p-6 transition-colors duration-300">
+
+    <div class="w-full max-w-[480px] space-y-8 animate-float">
+        <!-- Logo & Brand (Rule 21: Centered) -->
+        <div class="text-center mb-10">
+            <a href="index.html" class="inline-flex flex-col items-center gap-4 group">
+                <img src="assets/img/logo.png" alt="Logo"
+                    class="h-16 w-16 object-contain group-hover:scale-110 transition-transform">
+                <span
+                    class="font-display text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">CREATIVE</span>
+            </a>
+        </div>
+
+        <!-- Login Card (Rule 20, 21: Centered grid and highlights) -->
+        <div
+            class="bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-2xl p-10 border border-slate-100 dark:border-slate-800">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl font-display font-bold mb-2">Welcome Back</h1>
+                <p class="text-slate-500 dark:text-slate-400">Access your project dashboard</p>
+            </div>
+
+            <!-- Social Logins (Rule 28: Branded buttons) -->
+            <div class="space-y-4 mb-10">
+                <button
+                    class="w-full h-[56px] flex items-center justify-center gap-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl font-bold hover:bg-slate-50 transition-all">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-6 h-6" alt="Google">
+                    <span>Continue with Google</span>
+                </button>
+                <button
+                    class="w-full h-[56px] flex items-center justify-center gap-3 bg-[#1877F2] text-white rounded-xl font-bold hover:bg-[#166fe5] transition-all">
+                    <i class="ph ph-facebook-logo text-2xl"></i>
+                    <span>Continue with Facebook</span>
+                </button>
+            </div>
+
+            <div class="relative mb-10 text-center">
+                <hr class="border-slate-100 dark:border-slate-800">
+                <span
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-slate-900 px-4 text-xs font-black uppercase tracking-widest text-slate-400">Or
+                    email login</span>
+            </div>
+
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Email
+                        Address</label>
+                    <input type="email" placeholder="name@company.com"
+                        class="w-full bg-slate-50 dark:bg-slate-950 border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-indigo-600 transition-all">
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <label class="text-xs font-black uppercase tracking-widest text-slate-400">Password</label>
+                        <a href="#" class="text-xs font-bold text-indigo-600 hover:underline">Forgot?</a>
+                    </div>
+                    <input type="password" placeholder="••••••••"
+                        class="w-full bg-slate-50 dark:bg-slate-950 border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-indigo-600 transition-all">
+                </div>
+                <button type="submit"
+                    class="w-full h-[60px] bg-indigo-600 text-white rounded-xl font-bold text-lg shadow-xl shadow-indigo-200 dark:shadow-none hover:bg-slate-900 transition-all">Sign
+                    In</button>
+            </form>
+
+            <div class="mt-10 text-center">
+                <span class="text-slate-500">New client?</span>
+                <a href="#" class="font-bold text-indigo-600 hover:underline">Create an account</a>
+            </div>
+        </div>
+
+        <!-- Rule 22: Logo clickable to Home (already handled above), removed back to website text link -->
+    </div>
+
+</body>
+
+</html>

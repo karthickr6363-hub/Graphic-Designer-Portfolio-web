@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Let's Start a Project</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            600: '#6366f1',
+                            700: '#4f46e5',
+                            900: '#312e81',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- HEADER / NAVIGATION (Shared) -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-header h-[80px] flex items-center">
+        <div class="container mx-auto px-6 flex justify-between items-center h-full">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/img/logo.png" alt="Brand Logo" class="h-10 w-10 object-contain">
+                <span
+                    class="font-display text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">CREATIVE</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+                <a href="home2.html" class="hover:text-indigo-600 transition-colors">Home 2</a>
+                <a href="portfolio.html" class="hover:text-indigo-600 transition-colors">Portfolio</a>
+                <a href="services.html" class="hover:text-indigo-600 transition-colors">Services</a>
+                <a href="about.html" class="hover:text-indigo-600 transition-colors">About</a>
+                <a href="testimonials.html" class="hover:text-indigo-600 transition-colors">Testimonials</a>
+                <a href="blog.html" class="hover:text-indigo-600 transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition-colors active-nav-link">Contact</a>
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i id="sun-icon" class="ph ph-sun text-xl hidden"></i>
+                    <i id="moon-icon" class="ph ph-moon text-xl"></i>
+                </button>
+                <a href="contact.html"
+                    class="cta-button bg-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold">Hire Me</a>
+            </nav>
+
+            <div class="lg:hidden flex items-center gap-4">
+                <button id="mobile-menu-btn" class="text-2xl p-1"><i class="ph ph-list"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU (Shared) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm -translate-x-full transition-transform duration-300 lg:hidden text-slate-100">
+        <div class="w-4/5 h-full bg-slate-900 p-8 flex flex-col">
+            <div class="flex justify-between items-center mb-12">
+                <div class="flex items-center gap-2">
+                    <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8">
+                    <span class="font-display font-bold text-xl">CREATIVE</span>
+                </div>
+                <button id="mobile-menu-close" class="text-2xl"><i class="ph ph-x"></i></button>
+            </div>
+            <nav class="flex flex-col gap-6 text-lg">
+                <a href="index.html" class="hover:text-indigo-400">Home</a>
+                <a href="home2.html" class="hover:text-indigo-400">Home 2</a>
+                <a href="portfolio.html" class="hover:text-indigo-400">Portfolio</a>
+                <a href="services.html" class="hover:text-indigo-400">Services</a>
+                <a href="about.html" class="hover:text-indigo-400">About</a>
+                <a href="testimonials.html" class="hover:text-indigo-400">Testimonials</a>
+                <a href="blog.html" class="hover:text-indigo-400">Blog</a>
+                <a href="contact.html" class="text-indigo-400">Contact</a>
+                <hr class="border-slate-800 my-2">
+                <a href="contact.html" class="bg-indigo-600 text-white text-center py-3 rounded-xl font-semibold">Hire
+                    Me</a>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <!-- CONTACT HERO -->
+        <section class="py-24 bg-slate-50 dark:bg-slate-950">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="font-display text-5xl lg:text-7xl font-extrabold mb-8">Start a <span
+                            class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Conversation</span>
+                    </h1>
+                    <p class="text-xl text-slate-500 dark:text-slate-400">Ready to build something amazing? Fill out the
+                        form below or book a discovery call.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM & INFO -->
+        <section class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-20">
+                    <!-- Inquiry Form -->
+                    <div class="lg:w-2/3">
+                        <form
+                            class="space-y-8 bg-white dark:bg-slate-800 p-8 lg:p-12 rounded-[2.5rem] shadow-2xl shadow-indigo-100 dark:shadow-none border border-slate-100 dark:border-slate-700">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-2">
+                                    <label class="font-bold text-sm uppercase tracking-widest text-slate-400">Full
+                                        Name</label>
+                                    <input type="text" placeholder="John Doe"
+                                        class="w-full bg-slate-50 dark:bg-slate-900 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-indigo-600">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="font-bold text-sm uppercase tracking-widest text-slate-400">Email
+                                        Address</label>
+                                    <input type="email" placeholder="john@example.com"
+                                        class="w-full bg-slate-50 dark:bg-slate-900 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-indigo-600">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-2">
+                                    <label class="font-bold text-sm uppercase tracking-widest text-slate-400">Project
+                                        Type</label>
+                                    <select
+                                        class="w-full bg-slate-50 dark:bg-slate-900 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-indigo-600 appearance-none">
+                                        <option>Branding & Logo</option>
+                                        <option>Website Design</option>
+                                        <option>UI/UX Project</option>
+                                        <option>Social Media</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="font-bold text-sm uppercase tracking-widest text-slate-400">Budget
+                                        Range</label>
+                                    <select
+                                        class="w-full bg-slate-50 dark:bg-slate-900 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-indigo-600 appearance-none">
+                                        <option>$500 - $1,500</option>
+                                        <option>$1,500 - $5,000</option>
+                                        <option>$5,000 - $10,000</option>
+                                        <option>$10,000+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="font-bold text-sm uppercase tracking-widest text-slate-400">Project
+                                    Details</label>
+                                <textarea rows="6" placeholder="Tell us about your project, goals, and timeline..."
+                                    class="w-full bg-slate-50 dark:bg-slate-900 border-none rounded-3xl px-6 py-4 focus:ring-2 focus:ring-indigo-600"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="cta-button w-full bg-indigo-600 text-white py-5 rounded-2xl font-black text-lg shadow-xl shadow-indigo-200 dark:shadow-none">Send
+                                Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Sidebar Info -->
+                    <div class="lg:w-1/3 flex flex-col gap-12">
+                        <!-- Booking Block -->
+                        <div class="bg-slate-950 text-white p-10 rounded-[2.5rem] relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-600/20 rounded-full blur-3xl"></div>
+                            <h3 class="text-2xl font-bold mb-6">Book a Call</h3>
+                            <p class="text-slate-400 mb-8">Prefer to talk? Schedule a free 15-minute discovery call via
+                                Calendly.</p>
+                            <a href="#"
+                                class="cta-button inline-flex items-center gap-3 bg-white text-slate-950 px-8 py-4 rounded-xl font-bold">
+                                Book Now <i class="ph ph-calendar"></i>
+                            </a>
+                        </div>
+
+                        <!-- Direct Contact -->
+                        <div class="space-y-8">
+                            <div>
+                                <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-slate-400">Email Me
+                                </h4>
+                                <a href="mailto:hello@creative.com"
+                                    class="text-2xl font-bold hover:text-indigo-600 transition-colors">hello@creative.com</a>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-slate-400">Follow Me
+                                </h4>
+                                <div class="flex gap-4 text-3xl">
+                                    <a href="#" class="hover:text-indigo-600"><i class="ph ph-instagram-logo"></i></a>
+                                    <a href="#" class="hover:text-indigo-600"><i class="ph ph-behance-logo"></i></a>
+                                    <a href="#" class="hover:text-indigo-600"><i class="ph ph-dribbble-logo"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white dark:bg-slate-950 pt-20 pb-10 border-t border-slate-100 dark:border-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8">
+                        <span class="font-display font-bold text-xl uppercase">CREATIVE</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
+                        Transforming ideas into visually stunning realities. Let's build something amazing together.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-instagram-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-twitter-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-linkedin-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-behance-logo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h4 class="font-bold mb-6">Quick Links</h4>
+                    <ul class="flex flex-col gap-4 text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a></li>
+                        <li><a href="portfolio.html" class="hover:text-indigo-600 transition-colors">Portfolio</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-600 transition-colors">Services</a></li>
+                        <li><a href="about.html" class="hover:text-indigo-600 transition-colors">About Me</a></li>
+                        <li><a href="testimonials.html" class="hover:text-indigo-600 transition-colors">Testimonials</a>
+                        </li>
+                        <li><a href="blog.html" class="hover:text-indigo-600 transition-colors">Design Resources</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-indigo-600 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold mb-6">What I Do</h4>
+                    <ul class="flex flex-col gap-4 text-slate-500 dark:text-slate-400">
+                        <li>Brand Identity</li>
+                        <li>UI/UX Design</li>
+                        <li>Social Media Design</li>
+                        <li>Print & Packaging</li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold mb-6">Get in Touch</h4>
+                    <p class="text-slate-500 dark:text-slate-400 mb-4">Ready to start a project?</p>
+                    <a href="mailto:hello@creative.com"
+                        class="text-lg font-bold text-indigo-600 hover:underline">hello@creative.com</a>
+                    <div class="mt-6 flex items-center gap-2 text-slate-500">
+                        <i class="ph ph-map-pin"></i>
+                        <span>Remote | worldwide</span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:row justify-between items-center gap-4 text-sm text-slate-400">
+                <p>&copy; 2026 Creative Designer Portfolio. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+                    <a href="#" class="hover:text-indigo-600">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Design Packages & Solutions</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            600: '#6366f1',
+                            700: '#4f46e5',
+                            900: '#312e81',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- HEADER / NAVIGATION (Shared) -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-header h-[80px] flex items-center">
+        <div class="container mx-auto px-6 flex justify-between items-center h-full">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/img/logo.png" alt="Brand Logo" class="h-10 w-10 object-contain">
+                <span
+                    class="font-display text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">CREATIVE</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+                <a href="home2.html" class="hover:text-indigo-600 transition-colors">Home 2</a>
+                <a href="portfolio.html" class="hover:text-indigo-600 transition-colors">Portfolio</a>
+                <a href="services.html" class="hover:text-indigo-600 transition-colors active-nav-link">Services</a>
+                <a href="about.html" class="hover:text-indigo-600 transition-colors">About</a>
+                <a href="testimonials.html" class="hover:text-indigo-600 transition-colors">Testimonials</a>
+                <a href="blog.html" class="hover:text-indigo-600 transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition-colors">Contact</a>
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i id="sun-icon" class="ph ph-sun text-xl hidden"></i>
+                    <i id="moon-icon" class="ph ph-moon text-xl"></i>
+                </button>
+                <a href="contact.html"
+                    class="cta-button bg-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold">Hire Me</a>
+            </nav>
+
+            <div class="lg:hidden flex items-center gap-4">
+                <button id="mobile-menu-btn" class="text-2xl p-1"><i class="ph ph-list"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU (Shared) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm -translate-x-full transition-transform duration-300 lg:hidden text-slate-100">
+        <div class="w-4/5 h-full bg-slate-900 p-8 flex flex-col">
+            <div class="flex justify-between items-center mb-12">
+                <div class="flex items-center gap-2">
+                    <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8">
+                    <span class="font-display font-bold text-xl">CREATIVE</span>
+                </div>
+                <button id="mobile-menu-close" class="text-2xl"><i class="ph ph-x"></i></button>
+            </div>
+            <nav class="flex flex-col gap-6 text-lg">
+                <a href="index.html" class="hover:text-indigo-400">Home</a>
+                <a href="home2.html" class="hover:text-indigo-400">Home 2</a>
+                <a href="portfolio.html" class="hover:text-indigo-400">Portfolio</a>
+                <a href="services.html" class="text-indigo-400">Services</a>
+                <a href="about.html" class="hover:text-indigo-400">About</a>
+                <a href="testimonials.html" class="hover:text-indigo-400">Testimonials</a>
+                <a href="blog.html" class="hover:text-indigo-400">Blog</a>
+                <a href="contact.html" class="hover:text-indigo-400">Contact</a>
+                <hr class="border-slate-800 my-2">
+                <a href="contact.html" class="bg-indigo-600 text-white text-center py-3 rounded-xl font-semibold">Hire
+                    Me</a>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <!-- SERVICES HERO -->
+        <section class="py-32 bg-indigo-600 text-white relative overflow-hidden">
+            <div
+                class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]">
+            </div>
+            <div class="container mx-auto px-6 text-center relative z-10 space-y-6">
+                <span
+                    class="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-black uppercase tracking-widest border border-white/20">Packages
+                    & Pricing</span>
+                <h1 class="font-display text-6xl lg:text-8xl font-black">Design <span
+                        class="text-indigo-200 italic">Systems</span></h1>
+                <p class="text-indigo-100 max-w-3xl mx-auto text-xl font-light">
+                    Strategic visual solutions engineered for impact. Transparent pricing. Professional results.
+                </p>
+            </div>
+        </section>
+
+        <!-- MAIN SERVICES -->
+        <section class="py-32">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-stretch">
+                    <!-- Package 1 -->
+                    <div
+                        class="p-12 rounded-[3rem] bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-xl flex flex-col group hover:border-indigo-600 transition-colors duration-500">
+                        <div class="mb-10">
+                            <h3 class="text-3xl font-bold mb-4">Brand Essential</h3>
+                            <p class="text-slate-500 text-lg leading-relaxed mb-6">Foundational identity for creators
+                                and early-stage ventures.</p>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-5xl font-black">$499</span>
+                                <span class="text-slate-400 font-medium">Starting at</span>
+                            </div>
+                        </div>
+                        <div class="space-y-8 mb-12 flex-grow">
+                            <div>
+                                <h4 class="text-xs font-black uppercase tracking-widest text-indigo-600 mb-4">Visuals
+                                </h4>
+                                <ul class="space-y-4">
+                                    <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                                        <i class="ph ph-check-circle text-indigo-600"></i>
+                                        <span class="text-sm font-medium">Primary & Secondary Logo</span>
+                                    </li>
+                                    <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                                        <i class="ph ph-check-circle text-indigo-600"></i>
+                                        <span class="text-sm font-medium">Core Color Palette</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-black uppercase tracking-widest text-indigo-600 mb-4">Strategy
+                                </h4>
+                                <ul class="space-y-4">
+                                    <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                                        <i class="ph ph-check-circle text-indigo-600"></i>
+                                        <span class="text-sm font-medium">Basic Brand Guidelines (10pg)</span>
+                                    </li>
+                                    <li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+                                        <i class="ph ph-check-circle text-indigo-600"></i>
+                                        <span class="text-sm font-medium">1x Revision Cycle</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="contact.html"
+                            class="cta-button h-[70px] bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-black uppercase tracking-widest text-sm flex items-center justify-center mt-auto w-full group-hover:bg-indigo-600 group-hover:text-white transition-all">Book
+                            Now</a>
+                    </div>
+
+                    <!-- Package 2 (Highlighted) -->
+                    <div
+                        class="p-12 rounded-[3.5rem] bg-slate-950 text-white shadow-3xl lg:-mt-8 lg:mb-8 border-4 border-indigo-600 relative flex flex-col overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8">
+                            <span
+                                class="px-4 py-2 bg-indigo-600 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">Flagship
+                                Service</span>
+                        </div>
+                        <div class="mb-10 mt-6">
+                            <h3 class="text-3xl font-bold mb-4">Pro Identity</h3>
+                            <p class="text-slate-400 text-lg leading-relaxed mb-6">Comprehensive market-ready branding
+                                for scaling companies.</p>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-5xl font-black text-indigo-400">$1,499</span>
+                                <span class="text-slate-500 font-medium">Complete</span>
+                            </div>
+                        </div>
+                        <div class="space-y-10 mb-12 flex-grow">
+                            <div>
+                                <h4 class="text-xs font-black uppercase tracking-widest text-indigo-400 mb-4">The System
+                                </h4>
+                                <ul class="space-y-4">
+                                    <li class="flex items-center gap-3 text-slate-300">
+                                        <i class="ph ph-check-circle text-indigo-400"></i>
+                                        <span class="text-sm font-medium">Unlimited Logo Iterations</span>
+                                    </li>
+                                    <li class="flex items-center gap-3 text-slate-300">
+                                        <i class="ph ph-check-circle text-indigo-400"></i>
+                                        <span class="text-sm font-medium">Typography Suite & Licensing Advice</span>
+                                    </li>
+                                    <li class="flex items-center gap-3 text-slate-300">
+                                        <i class="ph ph-check-circle text-indigo-400"></i>
+                                        <span class="text-sm font-medium">Advanced Color Theory System</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-black uppercase tracking-widest text-indigo-400 mb-4">Assets
+                                </h4>
+                                <ul class="space-y-4">
+                                    <li class="flex items-center gap-3 text-slate-300">
+                                        <i class="ph ph-check-circle text-indigo-400"></i>
+                                        <span class="text-sm font-medium">Full Brand Book (30+ pages)</span>
+                                    </li>
+                                    <li class="flex items-center gap-3 text-slate-300">
+                                        <i class="ph ph-check-circle text-indigo-400"></i>
+                                        <span class="text-sm font-medium">Social Media Launch Kit</span>
+                                    </li>
+                                    <li class="flex items-center gap-3 text-slate-300">
+                                        <i class="ph ph-check-circle text-indigo-400"></i>
+                                        <span class="text-sm font-medium">Priority 10-Day Delivery</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="contact.html"
+                            class="cta-button h-[70px] bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest text-sm flex items-center justify-center mt-auto w-full hover:scale-105 transition-transform shadow-indigo-600/20 shadow-2xl">Start
+                            Growth Project</a>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div
+                        class="p-12 rounded-[3.1rem] bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-xl flex flex-col group hover:border-purple-600 transition-colors duration-500">
+                        <div class="mb-10">
+                            <h3 class="text-3xl font-bold mb-4">Creative Partner</h3>
+                            <p class="text-slate-500 text-lg leading-relaxed mb-6">Ongoing design leadership for brands
+                                that move fast.</p>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-5xl font-black">$2,499</span>
+                                <span class="text-slate-400 font-medium">/ month</span>
+                            </div>
+                        </div>
+                        <div class="space-y-8 mb-12 flex-grow">
+                            <ul class="space-y-6">
+                                <li class="flex items-start gap-4">
+                                    <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600">
+                                        <i class="ph ph-lightning text-xl"></i>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <h5 class="font-bold text-sm">24hr Turnaround</h5>
+                                        <p class="text-xs text-slate-500">On small requests (social posts etc.)</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg text-indigo-600">
+                                        <i class="ph ph-users text-xl"></i>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <h5 class="font-bold text-sm">Slack Integration</h5>
+                                        <p class="text-xs text-slate-500">Direct access to the designer.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="p-2 bg-pink-100 dark:bg-pink-900/30 rounded-lg text-pink-600">
+                                        <i class="ph ph-devices text-xl"></i>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <h5 class="font-bold text-sm">Full Tech Stack</h5>
+                                        <p class="text-xs text-slate-500">From UI design to print production.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="contact.html"
+                            class="cta-button h-[70px] bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-black uppercase tracking-widest text-sm flex items-center justify-center mt-auto w-full group-hover:bg-purple-600 group-hover:text-white transition-all">Submit
+                            Inquiry</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT TIMELINE -->
+        <section class="py-32 bg-slate-50 dark:bg-slate-950">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20 space-y-4">
+                    <h2 class="text-4xl font-display font-bold">Standard Project Arc</h2>
+                    <p class="text-slate-500 text-lg">Expected delivery times for custom projects.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div
+                        class="relative p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 space-y-4">
+                        <span
+                            class="absolute -top-4 left-8 px-4 py-1 bg-indigo-600 text-white text-[10px] font-black rounded-full">WEEK
+                            1</span>
+                        <h4 class="font-bold">Discovery</h4>
+                        <p class="text-sm text-slate-500">Research, interviews, and strategy alignment.</p>
+                    </div>
+                    <div
+                        class="relative p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 space-y-4">
+                        <span
+                            class="absolute -top-4 left-8 px-4 py-1 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-black rounded-full">WEEK
+                            2-3</span>
+                        <h4 class="font-bold">Concepting</h4>
+                        <p class="text-sm text-slate-500">Visual exploration and initial concepts.</p>
+                    </div>
+                    <div
+                        class="relative p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 space-y-4">
+                        <span
+                            class="absolute -top-4 left-8 px-4 py-1 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-black rounded-full">WEEK
+                            4</span>
+                        <h4 class="font-bold">Refinement</h4>
+                        <p class="text-sm text-slate-500">Fine-tuning based on your feedback.</p>
+                    </div>
+                    <div
+                        class="relative p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 space-y-4">
+                        <span
+                            class="absolute -top-4 left-8 px-4 py-1 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-black rounded-full">WEEK
+                            5</span>
+                        <h4 class="font-bold">Delivery</h4>
+                        <p class="text-sm text-slate-500">Asset export and brand launch support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="py-32">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-display font-bold">Frequently Asked Questions</h2>
+                </div>
+                <div class="space-y-6">
+                    <details
+                        class="group bg-white dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 shadow-sm transition-all"
+                        open>
+                        <summary class="flex justify-between items-center font-bold text-xl cursor-pointer list-none">
+                            What is your typical project timeline?
+                            <i class="ph ph-caret-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-6 text-slate-500 leading-relaxed">
+                            Most branding projects take between 4 to 6 weeks from kick-off to final delivery. UI/UX
+                            projects vary based on complexity, but usually range from 6 to 12 weeks.
+                        </p>
+                    </details>
+                    <details
+                        class="group bg-white dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 shadow-sm transition-all">
+                        <summary class="flex justify-between items-center font-bold text-xl cursor-pointer list-none">
+                            Do you offer payment plans?
+                            <i class="ph ph-caret-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-6 text-slate-500 leading-relaxed">
+                            Yes, for projects over $1,000, we typically split payments into a 50% deposit and 50% on
+                            completion. Custom retainers are billed monthly upfront.
+                        </p>
+                    </details>
+                    <details
+                        class="group bg-white dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 shadow-sm transition-all">
+                        <summary class="flex justify-between items-center font-bold text-xl cursor-pointer list-none">
+                            What files will I receive at the end?
+                            <i class="ph ph-caret-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-6 text-slate-500 leading-relaxed">
+                            You will receive all industry-standard formats including AI, EPS, SVG for vectors, and
+                            high-res PNG/JPG for web use. For UI projects, you get full Figma access and assets.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white dark:bg-slate-950 pt-20 pb-10 border-t border-slate-100 dark:border-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8">
+                        <span class="font-display font-bold text-xl uppercase">CREATIVE</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
+                        Transforming ideas into visually stunning realities. Let's build something amazing together.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-instagram-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-twitter-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-linkedin-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            <i class="ph ph-behance-logo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h4 class="font-bold mb-6">Quick Links</h4>
+                    <ul class="flex flex-col gap-4 text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a></li>
+                        <li><a href="portfolio.html" class="hover:text-indigo-600 transition-colors">Portfolio</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-600 transition-colors">Services</a></li>
+                        <li><a href="about.html" class="hover:text-indigo-600 transition-colors">About Me</a></li>
+                        <li><a href="testimonials.html" class="hover:text-indigo-600 transition-colors">Testimonials</a>
+                        </li>
+                        <li><a href="blog.html" class="hover:text-indigo-600 transition-colors">Design Resources</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-indigo-600 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold mb-6">What I Do</h4>
+                    <ul class="flex flex-col gap-4 text-slate-500 dark:text-slate-400">
+                        <li>Brand Identity</li>
+                        <li>UI/UX Design</li>
+                        <li>Social Media Design</li>
+                        <li>Print & Packaging</li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold mb-6">Get in Touch</h4>
+                    <p class="text-slate-500 dark:text-slate-400 mb-4">Ready to start a project?</p>
+                    <a href="mailto:hello@creative.com"
+                        class="text-lg font-bold text-indigo-600 hover:underline">hello@creative.com</a>
+                    <div class="mt-6 flex items-center gap-2 text-slate-500">
+                        <i class="ph ph-map-pin"></i>
+                        <span>Remote | worldwide</span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:row justify-between items-center gap-4 text-sm text-slate-400">
+                <p>&copy; 2026 Creative Designer Portfolio. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+                    <a href="#" class="hover:text-indigo-600">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
