@@ -53,9 +53,25 @@
             <nav class="hidden lg:flex items-center gap-8">
                 <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
                 <a href="portfolio.html" class="hover:text-indigo-600 transition-colors">Portfolio</a>
-                <a href="contact.html"
+                <button
+                    class="theme-toggle p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="sun-icon ph ph-sun text-xl hidden"></i>
+                    <i class="moon-icon ph ph-moon text-xl"></i>
+                </button>
+                <a href="services.html"
                     class="cta-button bg-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold">Hire Me</a>
             </nav>
+            <!-- Mobile Menu Btn -->
+            <div class="lg:hidden flex items-center gap-4">
+                <button
+                    class="theme-toggle p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="sun-icon ph ph-sun text-xl hidden"></i>
+                    <i class="moon-icon ph ph-moon text-xl"></i>
+                </button>
+                <button id="mobile-menu-btn" class="text-2xl p-1">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -100,19 +116,19 @@
                     </p>
                     <div class="flex gap-4">
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white transition-all duration-300">
                             <i class="ph ph-instagram-logo text-xl"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white transition-all duration-300">
                             <i class="ph ph-twitter-logo text-xl"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white transition-all duration-300">
                             <i class="ph ph-linkedin-logo text-xl"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white transition-all duration-300">
                             <i class="ph ph-behance-logo text-xl"></i>
                         </a>
                     </div>
@@ -151,9 +167,15 @@
                     <p class="text-slate-500 dark:text-slate-400 mb-4">Ready to start a project?</p>
                     <a href="mailto:hello@creative.com"
                         class="text-lg font-bold text-indigo-600 hover:underline">hello@creative.com</a>
-                    <div class="mt-6 flex items-center gap-2 text-slate-500">
-                        <i class="ph ph-map-pin"></i>
-                        <span>Remote | worldwide</span>
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400">
+                            <i class="ph ph-phone text-indigo-600 dark:text-indigo-400"></i>
+                            <span>+1 (555) 000-0000</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400">
+                            <i class="ph ph-map-pin text-indigo-600 dark:text-indigo-400"></i>
+                            <span>Remote | worldwide</span>
+                        </div>
                     </div>
                 </div>
             </div>

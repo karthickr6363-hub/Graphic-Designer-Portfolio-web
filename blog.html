@@ -65,16 +65,21 @@
                 <a href="testimonials.html" class="hover:text-indigo-600 transition-colors">Testimonials</a>
                 <a href="blog.html" class="hover:text-indigo-600 transition-colors active-nav-link">Blog</a>
                 <a href="contact.html" class="hover:text-indigo-600 transition-colors">Contact</a>
-                <button id="theme-toggle"
-                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                    <i id="sun-icon" class="ph ph-sun text-xl hidden"></i>
-                    <i id="moon-icon" class="ph ph-moon text-xl"></i>
+                <button
+                    class="theme-toggle p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="sun-icon ph ph-sun text-xl hidden"></i>
+                    <i class="moon-icon ph ph-moon text-xl"></i>
                 </button>
-                <a href="contact.html"
+                <a href="services.html"
                     class="cta-button bg-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold">Hire Me</a>
             </nav>
 
             <div class="lg:hidden flex items-center gap-4">
+                <button
+                    class="theme-toggle p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="sun-icon ph ph-sun text-xl hidden"></i>
+                    <i class="moon-icon ph ph-moon text-xl"></i>
+                </button>
                 <button id="mobile-menu-btn" class="text-2xl p-1"><i class="ph ph-list"></i></button>
             </div>
         </div>
@@ -89,7 +94,13 @@
                     <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8">
                     <span class="font-display font-bold text-xl">CREATIVE</span>
                 </div>
-                <button id="mobile-menu-close" class="text-2xl"><i class="ph ph-x"></i></button>
+                <div class="flex items-center gap-4">
+                    <button class="theme-toggle p-2 rounded-full hover:bg-slate-800 transition-colors">
+                        <i class="sun-icon ph ph-sun text-xl hidden"></i>
+                        <i class="moon-icon ph ph-moon text-xl"></i>
+                    </button>
+                    <button id="mobile-menu-close" class="text-2xl"><i class="ph ph-x"></i></button>
+                </div>
             </div>
             <nav class="flex flex-col gap-6 text-lg">
                 <a href="index.html" class="hover:text-indigo-400">Home</a>
@@ -101,7 +112,7 @@
                 <a href="blog.html" class="text-indigo-400">Blog</a>
                 <a href="contact.html" class="hover:text-indigo-400">Contact</a>
                 <hr class="border-slate-800 my-2">
-                <a href="contact.html" class="bg-indigo-600 text-white text-center py-3 rounded-xl font-semibold">Hire
+                <a href="services.html" class="bg-indigo-600 text-white text-center py-3 rounded-xl font-semibold">Hire
                     Me</a>
             </nav>
         </div>
@@ -122,13 +133,14 @@
         <!-- CATEGORIES -->
         <section class="pb-12 bg-slate-50 dark:bg-slate-950">
             <div class="container mx-auto px-6 flex flex-wrap justify-center gap-4">
-                <button class="px-6 py-2 rounded-full bg-indigo-600 text-white font-bold">All</button>
-                <button
-                    class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 font-bold hover:bg-slate-100 transition-colors shadow-sm">Tips</button>
-                <button
-                    class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 font-bold hover:bg-slate-100 transition-colors shadow-sm">Tutorials</button>
-                <button
-                    class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 font-bold hover:bg-slate-100 transition-colors shadow-sm">Freebies</button>
+                <button data-filter="all"
+                    class="filter-btn px-6 py-2 rounded-full bg-indigo-600 text-white font-bold">All</button>
+                <button data-filter="tips"
+                    class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 font-bold hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-sm">Tips</button>
+                <button data-filter="tutorials"
+                    class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 font-bold hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-sm">Tutorials</button>
+                <button data-filter="freebies"
+                    class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 font-bold hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-sm">Freebies</button>
             </div>
         </section>
 
@@ -137,8 +149,8 @@
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     <!-- Post 1 -->
-                    <article
-                        class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group flex flex-col">
+                    <article data-category="tips"
+                        class="blog-post bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group flex flex-col">
                         <div class="aspect-video overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800"
                                 class="w-full h-full object-cover transition-transform group-hover:scale-105">
@@ -162,10 +174,11 @@
                     </article>
 
                     <!-- Post 2 -->
-                    <article
-                        class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group flex flex-col">
-                        <div class="aspect-video overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fc4c?auto=format&fit=crop&q=80&w=800"
+                    <article data-category="tutorials"
+                        class="blog-post bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group flex flex-col">
+                        <div class="aspect-video overflow-hidden bg-slate-200 dark:bg-slate-700 min-h-[200px]">
+                            <img src="https://i.pinimg.com/736x/71/bd/9d/71bd9d5e0e1cb3a6dc3142ae03c0ce96.jpg"
+                                alt="Figma Auto Layout Tutorial Workspace"
                                 class="w-full h-full object-cover transition-transform group-hover:scale-105">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
@@ -187,13 +200,14 @@
                     </article>
 
                     <!-- Post 3 -->
-                    <article
-                        class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group flex flex-col border-4 border-indigo-600/10 relative">
+                    <article data-category="freebies"
+                        class="blog-post bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group flex flex-col border-4 border-indigo-600/10 relative">
                         <div
                             class="absolute top-4 right-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-black uppercase">
                             Freebie</div>
-                        <div class="aspect-video overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bde2?auto=format&fit=crop&q=80&w=800"
+                        <div class="aspect-video overflow-hidden bg-slate-200 dark:bg-slate-700 min-h-[200px]">
+                            <img src="https://i.pinimg.com/1200x/5b/cc/bd/5bccbd962ab3ffc8366c50dc9dde7d75.jpg"
+                                alt="Minimalist Stationery Branding Mockup"
                                 class="w-full h-full object-cover transition-transform group-hover:scale-105">
                         </div>
                         <div class="p-8 flex flex-col flex-grow">
@@ -233,19 +247,19 @@
                     </p>
                     <div class="flex gap-4">
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white transition-all duration-300">
                             <i class="ph ph-instagram-logo text-xl"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white transition-all duration-300">
                             <i class="ph ph-twitter-logo text-xl"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white transition-all duration-300">
                             <i class="ph ph-linkedin-logo text-xl"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white transition-all duration-300">
                             <i class="ph ph-behance-logo text-xl"></i>
                         </a>
                     </div>
@@ -284,9 +298,15 @@
                     <p class="text-slate-500 dark:text-slate-400 mb-4">Ready to start a project?</p>
                     <a href="mailto:hello@creative.com"
                         class="text-lg font-bold text-indigo-600 hover:underline">hello@creative.com</a>
-                    <div class="mt-6 flex items-center gap-2 text-slate-500">
-                        <i class="ph ph-map-pin"></i>
-                        <span>Remote | worldwide</span>
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400">
+                            <i class="ph ph-phone text-indigo-600 dark:text-indigo-400"></i>
+                            <span>+1 (555) 000-0000</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400">
+                            <i class="ph ph-map-pin text-indigo-600 dark:text-indigo-400"></i>
+                            <span>Remote | worldwide</span>
+                        </div>
                     </div>
                 </div>
             </div>
