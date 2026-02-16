@@ -75,6 +75,38 @@
         </div>
     </header>
 
+    <!-- MOBILE MENU SIDEBAR (Shared) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm -translate-x-full transition-transform duration-300 lg:hidden text-white">
+        <div class="w-4/5 h-full bg-slate-900 p-8 flex flex-col">
+            <div class="flex justify-between items-center mb-12">
+                <div class="flex items-center gap-2">
+                    <img src="assets/img/logo.png" alt="Logo" class="h-8 w-8">
+                    <span class="font-display font-bold text-xl uppercase italic">Privacy</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="theme-toggle p-2 rounded-full hover:bg-slate-800 transition-colors">
+                        <i class="sun-icon ph ph-sun text-xl hidden"></i>
+                        <i class="moon-icon ph ph-moon text-xl"></i>
+                    </button>
+                    <button id="mobile-menu-close" class="text-2xl"><i class="ph ph-x"></i></button>
+                </div>
+            </div>
+            <nav class="flex flex-col gap-6 text-lg">
+                <a href="index.html" class="hover:text-indigo-400">Home</a>
+                <a href="portfolio.html" class="hover:text-indigo-400 font-medium">Portfolio</a>
+                <a href="services.html" class="hover:text-indigo-400 font-medium">Services</a>
+                <a href="about.html" class="hover:text-indigo-400 font-medium">About</a>
+                <a href="blog.html" class="hover:text-indigo-400 font-medium">Blog</a>
+                <a href="contact.html" class="hover:text-indigo-400 font-medium">Contact</a>
+                <hr class="border-slate-800 my-2">
+                <a href="services.html"
+                    class="bg-indigo-600 text-white text-center py-3 px-12 rounded-xl font-semibold w-fit self-center">Hire
+                    Me</a>
+            </nav>
+        </div>
+    </div>
+
     <main class="py-24 container mx-auto px-6 max-w-4xl">
         <h1 class="font-display text-4xl lg:text-5xl font-extrabold mb-12">Privacy Policy</h1>
 
